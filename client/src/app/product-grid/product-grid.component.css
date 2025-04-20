@@ -1,8 +1,7 @@
 .product-grid-container {
-  padding: 20px;
+  padding: 25px;
   font-family: Arial, sans-serif;
   width: 100%;
-  max-width: 1400px; /* Ökad maxbredd för att fylla större skärmar */
   margin: 0 auto;
 }
 
@@ -30,16 +29,6 @@ h2 {
 @media (min-width: 1024px) {
   .product-grid {
     grid-template-columns: repeat(4, 1fr);
-  }
-
-  .product-grid-container {
-    padding: 20px 40px; /* Ökad padding på större skärmar */
-  }
-}
-
-@media (min-width: 1400px) {
-  .product-grid-container {
-    padding: 20px 60px; /* Ytterligare ökad padding på mycket stora skärmar */
   }
 }
 
