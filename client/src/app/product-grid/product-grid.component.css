@@ -1,0 +1,84 @@
+.product-grid-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 1400px; /* Ökad maxbredd för att fylla större skärmar */
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px; /* Ökat avstånd mellan produktkort */
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+/* Responsiva layout-justeringar enligt wireframe */
+@media (min-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .product-grid-container {
+    padding: 20px 40px; /* Ökad padding på större skärmar */
+  }
+}
+
+@media (min-width: 1400px) {
+  .product-grid-container {
+    padding: 20px 60px; /* Ytterligare ökad padding på mycket stora skärmar */
+  }
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error-message {
+  color: #e74c3c;
+  text-align: center;
+  padding: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #777;
+}

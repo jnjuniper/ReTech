@@ -1,0 +1,21 @@
+<div class="product-card">
+  <!-- Ändrat från /product till bara product för att matcha din routing -->
+  <a [routerLink]="['/product', product.slug]" class="product-link">
+    <div class="product-image-container">
+      <img
+        [src]="product.image"
+        [alt]="product.productName"
+        class="product-image"
+      />
+    </div>
+    <div class="product-info">
+      <h3 class="product-name">{{ product.productName }}</h3>
+      <p class="product-brand">{{ product.brand }}</p>
+      <div class="product-price">{{ product.price }} SEK</div>
+    </div>
+  </a>
+  <!-- Hjärtikon för att lägga till favoriter -->
+  <button class="heart-icon" (click)="toggleFavorite($event)">
+    <i class="far fa-heart"></i>
+  </button>
+</div>

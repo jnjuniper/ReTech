@@ -1,0 +1,30 @@
+<div class="product-grid-container">
+  <h2>Populära produkter</h2>
+
+  <!-- Loading spinner -->
+  <div *ngIf="loading" class="loading-spinner">
+    <div class="spinner"></div>
+    <p>Laddar produkter...</p>
+  </div>
+
+  <!-- Error message -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Product grid -->
+  <div *ngIf="!loading && !errorMessage" class="product-grid">
+    <app-product-card
+      *ngFor="let product of products.slice(0, 8)"
+      [product]="product"
+    ></app-product-card>
+  </div>
+
+  <!-- Empty state -->
+  <div
+    *ngIf="!loading && !errorMessage && products.length === 0"
+    class="empty-state"
+  >
+    <p>Inga produkter hittades.</p>
+  </div>
+</div>
