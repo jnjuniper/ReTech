@@ -1,0 +1,56 @@
+<div class="product-detail-container">
+  <!-- Loading spinner -->
+  <div *ngIf="loading" class="loading-spinner">
+    <div class="spinner"></div>
+    <p>Laddar produkt...</p>
+  </div>
+
+  <!-- Error message -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Product detail -->
+  <div *ngIf="product && !loading && !errorMessage" class="product-detail">
+    <div class="product-image-container">
+      <img
+        [src]="product.image"
+        [alt]="product.productName"
+        class="product-image"
+      />
+      <!-- Add heart icon for mobile screens only -->
+      <button class="heart-icon-mobile" (click)="toggleFavorite($event)">
+        <i class="far fa-heart"></i>
+      </button>
+    </div>
+
+    <div class="product-info">
+      <h1 class="product-title">{{ product.productName }}</h1>
+      <p class="product-brand">{{ product.brand }}</p>
+
+      <div class="product-description">
+        <p>{{ product.productDescription }}</p>
+      </div>
+
+      <div class="product-price">{{ product.price }} SEK</div>
+
+      <button class="add-to-cart-btn" (click)="addToCart()">
+        Lägg i varukorg
+      </button>
+    </div>
+  </div>
+
+  <!-- Similar products section -->
+  <div
+    *ngIf="product && !loading && similarProducts.length > 0"
+    class="similar-products-container"
+  >
+    <h3>Liknande produkter</h3>
+    <div class="similar-products-grid">
+      <app-product-card
+        *ngFor="let similarProduct of similarProducts"
+        [product]="similarProduct"
+      ></app-product-card>
+    </div>
+  </div>
+</div>
