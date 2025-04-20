@@ -6,7 +6,7 @@
 
 <div *ngIf="!error && heroImages.length > 0">
 
-  <div class="sm:hidden">
+  <div class="sm:hidden p-[25px]">
     <div class="mb-10">
       <div class="h-64 relative overflow-hidden">
         <img
@@ -26,7 +26,7 @@
   </div>
 
 
-  <div class="hidden sm:block lg:hidden">
+  <div class="hidden sm:block lg:hidden p-[25px]">
     <div class="mb-10">
       <div class="h-96 relative overflow-hidden">
         <img
@@ -36,7 +36,7 @@
           [ngClass]="transitionClass"
         />
       </div>
-      <div class="p-4 text-center">
+      <div class="p-[25px] text-center">
         <h1 class="text-3xl font-bold mb-4">
           {{ currentImage?.imageDescription }}
         </h1>
@@ -46,7 +46,7 @@
   </div>
 
 
-  <div class="hidden lg:block p-4">
+  <div class="hidden lg:block p-[25px]">
     <div class="mb-10">
       <div class="flex flex-row mb-8">
         <div class="w-1/2 p-8 flex items-center">
@@ -67,7 +67,7 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-3 gap-4">
+      <div class="grid grid-cols-3 gap-[25px]">
         <img
           *ngFor="let spot of spots"
           [src]="spot.image"
