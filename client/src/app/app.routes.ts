@@ -4,8 +4,15 @@ import { ProductGridComponent } from './product-grid/product-grid.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent }, // Startsidan visar HomeComponent
-  { path: 'products', component: ProductGridComponent }, // Separat produktsida
-  { path: 'product/:slug', component: ProductDetailComponent }, // Produktdetalj-sida
+  { path: '', component: HomeComponent },
+  { path: 'products', component: ProductGridComponent },
+  { path: 'product/:slug', component: ProductDetailComponent },
+  {
+    path: 'search',
+    loadComponent: () =>
+      import('./search-results/search-results.component').then(
+        (m) => m.SearchResultsComponent
+      ),
+  },
   { path: '**', redirectTo: '' },
 ];
