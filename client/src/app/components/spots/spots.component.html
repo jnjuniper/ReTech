@@ -1,0 +1,23 @@
+<div *ngIf="error" class="text-red-500 p-4">{{ error }}</div>
+<div *ngIf="!error && spots.length === 0" class="p-4">Loading spots...</div>
+
+<div class="hidden lg:block">
+  <div *ngIf="spots.length > 0" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div *ngFor="let spot of spots" class="relative group overflow-hidden rounded shadow-lg">
+      <img
+        [src]="spot.image"
+        [alt]="spot.altText || 'Spot image'"
+        class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+      />
+
+      <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+        <span class="text-white text-xl font-bold drop-shadow-lg">{{ spot.altText }}</span>
+      </div>
+
+      <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+        <span class="h-25"></span>
+        <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition pointer-events-auto mt-2">Utforska</a>
+      </div>
+    </div>
+  </div>
+</div>
