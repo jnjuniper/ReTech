@@ -5,7 +5,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { LayoutComponent } from './layout/layout.component';
 
 export const routes: Routes = [
-  
+
   {
     path: '',
     component: LayoutComponent,
@@ -19,16 +19,20 @@ export const routes: Routes = [
            import('./search-results/search-results.component').then(
              (m) => m.SearchResultsComponent
            )
-       }, 
+       },
     ]
   },
 
-  
+
   {
     path: 'admin/products/new',
     loadComponent: () =>
       import('./admin/admin.component').then((m) => m.AdminComponent)
   },
 
+  { path: 'admin/products',
+  loadComponent: () =>
+    import('./admin/admin.product-list/admin.product-list.component').then((m) => m.AdminProductListComponent)
+},
   { path: '**', redirectTo: '' }
 ];
