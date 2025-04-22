@@ -1,0 +1,87 @@
+<div class="flex h-screen flex-col">
+  <div class="bg-green-800 text-white p-4">
+    <h1 class="text-3xl font-bold">Administration</h1>
+  </div>
+
+  <div class="flex flex-1">
+    <aside class="w-64 bg-gray-100 p-4">
+      <h2 class="text-lg font-semibold">Produkter</h2>
+    </aside>
+
+    <main class="flex-1 p-6">
+      <header class="mb-6">
+        <h2 class="text-2xl font-bold">Ny produkt</h2>
+      </header>
+
+      <form (ngSubmit)="onSubmit()" class="space-y-4 max-w-lg">
+        <div>
+          <label for="productName">Namn</label>
+          <input
+            id="productName"
+            type="text"
+            [(ngModel)]="product.productName"
+            name="productName"
+            class="w-full border rounded p-2"
+          />
+        </div>
+        <div>
+          <label for="productDescription">Beskrivning</label>
+          <textarea
+            id="productDescription"
+            [(ngModel)]="product.productDescription"
+            name="productDescription"
+            rows="4"
+            class="w-full border rounded p-2 resize-none"
+          ></textarea>
+        </div>
+        <div>
+          <label for="image">Bild</label>
+          <input
+            id="image"
+            type="text"
+            [(ngModel)]="product.image"
+            name="image"
+            class="w-full border rounded p-2"
+          />
+        </div>
+        <div>
+          <label for="brand">Märke</label>
+          <input
+            id="brand"
+            type="text"
+            [(ngModel)]="product.brand"
+            name="brand"
+            class="w-full border rounded p-2"
+          />
+        </div>
+        <div>
+          <label for="sku">SKU</label>
+          <input
+            id="sku"
+            type="text"
+            [(ngModel)]="product.sku"
+            name="sku"
+            class="w-full border rounded p-2"
+          />
+        </div>
+        <div>
+          <label for="price">Pris</label>
+          <input
+            id="price"
+            type="number"
+            [(ngModel)]="product.price"
+            name="price"
+            class="w-full border rounded p-2"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-green-800"
+        >
+          Lägg till
+        </button>
+      </form>
+    </main>
+  </div>
+</div>
