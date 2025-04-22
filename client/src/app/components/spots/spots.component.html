@@ -1,7 +1,7 @@
 <div *ngIf="error" class="text-red-500 p-4">{{ error }}</div>
 <div *ngIf="!error && spots.length === 0" class="p-4">Loading spots...</div>
 
-<div class="hidden lg:block">
+<div class="hidden lg:block p-[25px]">
   <div *ngIf="spots.length > 0" class="grid grid-cols-1 md:grid-cols-3 gap-6">
     <div *ngFor="let spot of spots" class="relative group overflow-hidden rounded shadow-lg">
       <img
