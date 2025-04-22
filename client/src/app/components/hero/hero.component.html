@@ -6,27 +6,8 @@
 
 <div *ngIf="!error && heroImages.length > 0">
 
-  <div class="sm:hidden p-[25px]">
-    <div class="mb-10">
-      <div class="h-64 relative overflow-hidden">
-        <img
-          [src]="currentImage?.image"
-          [alt]="currentImage?.altText"
-          class="w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-500"
-          [ngClass]="transitionClass"
-        />
-      </div>
-      <div class="p-4 text-center">
-        <h1 class="text-3xl font-bold mb-4">
-          {{ currentImage?.imageDescription }}
-        </h1>
-        <p class="text-gray-700 mb-4">{{ currentImage?.altText }}</p>
-      </div>
-    </div>
-  </div>
 
-
-  <div class="hidden sm:block lg:hidden p-[25px]">
+  <div class="block lg:hidden p-[25px]">
     <div class="mb-10">
       <div class="h-96 relative overflow-hidden">
         <img
@@ -66,15 +47,9 @@
           />
         </div>
       </div>
-
-      <div class="grid grid-cols-3 gap-[25px]">
-        <img
-          *ngFor="let spot of spots"
-          [src]="spot.image"
-          [alt]="spot.altText || 'Spot image'"
-          class="w-full h-[300px] object-cover"
-        />
-      </div>
     </div>
   </div>
-</div>
+
+
+<app-spots></app-spots>
+
