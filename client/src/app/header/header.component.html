@@ -12,13 +12,17 @@
         />
       </div>
 
-      <div class="flex items-center gap-4 w-full md:w-auto">
+      <form
+        (submit)="onSearch($event)"
+        class="flex items-center gap-4 w-full md:w-auto"
+      >
         <input
           type="text"
+          [(ngModel)]="query"
+          name="search"
           placeholder="Sök produkter..."
-          class="w-full md:w-64 px-3 py-2 border-2 border-green-800 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+          class="w-full md:w-64 px-3 py-2 border rounded-md focus:outline-none"
         />
-
         <div class="flex gap-4 md:hidden">
           <lucide-icon
             name="Heart"
@@ -29,7 +33,7 @@
             class="w-6 h-6 text-gray-700 cursor-pointer"
           ></lucide-icon>
         </div>
-      </div>
+      </form>
     </div>
 
     <div class="hidden md:flex gap-4">

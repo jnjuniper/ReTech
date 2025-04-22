@@ -13,13 +13,13 @@ export const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'products', component: ProductGridComponent },
       { path: 'product/:slug', component: ProductDetailComponent },
-      // {
-      //   path: 'search',
-      //   loadComponent: () =>
-      //     import('./search-results/search-results.component').then(
-      //       (m) => m.SearchResultsComponent
-      //     )
-      // }, Bortkommenterat nu, aktiverar detta när search-results.component är mergad. /AL
+       {
+         path: 'search',
+         loadComponent: () =>
+           import('./search-results/search-results.component').then(
+             (m) => m.SearchResultsComponent
+           )
+       }, 
     ]
   },
 
