@@ -1,0 +1,46 @@
+<div class="flex h-screen flex-col">
+  <div class="bg-green-800 text-white p-4">
+    <h1 class="text-3xl font-bold">Administration</h1>
+  </div>
+
+  <div class="flex flex-1">
+    <aside class="w-64 bg-gray-100 p-4">
+      <h2 class="text-lg font-semibold">Produkter</h2>
+    </aside>
+    <main class="flex-1 p-6">
+      <header class="mb-6 flex items-center justify-between">
+        <h2 class="text-2xl font-bold">Produkter</h2>
+
+        <a
+          class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-500"
+          [routerLink]="['/admin/products/new']"
+        >
+          Ny produkt
+        </a>
+      </header>
+
+
+      <section>
+        <div *ngIf="loading" class="text-gray-500">Laddar produkter...</div>
+        <div *ngIf="error" class="text-red-500">{{ error }}</div>
+
+        <table *ngIf="!loading && !error" class="min-w-full bg-white border border-black rounded shadow-sm" style="border-collapse: separate; border-spacing: 0;">
+          <thead>
+            <tr>
+              <th class="py-2 px-4 border-b border-black bg-gray-200 text-left">Namn</th>
+              <th class="py-2 px-4 border-b border-black bg-gray-200 text-left">SKU</th>
+              <th class="py-2 px-4 border-b border-black bg-gray-200 text-left">Pris</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products" class="even:bg-gray-50">
+              <td class="py-2 px-4 border-b border-black">{{ product.productName }}</td>
+              <td class="py-2 px-4 border-b border-black">{{ product.sku }}</td>
+              <td class="py-2 px-4 border-b border-black">{{ product.price }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</div>
