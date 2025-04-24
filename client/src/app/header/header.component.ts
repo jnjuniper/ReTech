@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LucideIconsModule } from '../lucide-icons/lucide-icons.module';
@@ -7,7 +7,7 @@ import { LucideIconsModule } from '../lucide-icons/lucide-icons.module';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, FormsModule, LucideIconsModule],
+  imports: [CommonModule, FormsModule, LucideIconsModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
