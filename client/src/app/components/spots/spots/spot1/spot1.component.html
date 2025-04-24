@@ -1,0 +1,16 @@
+<div class="relative group overflow-hidden rounded shadow-lg">
+  <img
+    [src]="spotData.image"
+    [alt]="spotData.altText || 'Spot 1 image'"
+    class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+  />
+
+  <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+    <span class="text-white text-xl font-bold drop-shadow-lg">{{ spotData.altText }}</span>
+  </div>
+
+  <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+    <span class="h-25"></span>
+    <a [href]="spotData.link || '#'" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-500 transition pointer-events-auto mt-2">Utforska</a>
+  </div>
+</div>
