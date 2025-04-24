@@ -2,22 +2,9 @@
 <div *ngIf="!error && spots.length === 0" class="p-4">Loading spots...</div>
 
 <div class="hidden lg:block p-[25px]">
-  <div *ngIf="spots.length > 0" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div *ngFor="let spot of spots" class="relative group overflow-hidden rounded shadow-lg">
-      <img
-        [src]="spot.image"
-        [alt]="spot.altText || 'Spot image'"
-        class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-      />
-
-      <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-        <span class="text-white text-xl font-bold drop-shadow-lg">{{ spot.altText }}</span>
-      </div>
-
-      <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-        <span class="h-25"></span>
-        <a href="#" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-500 transition pointer-events-auto mt-2">Utforska</a>
-      </div>
-    </div>
+  <div *ngIf="spots.length >= 3" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <app-spot1 [spotData]="spots[0]"></app-spot1>
+    <app-spot2 [spotData]="spots[1]"></app-spot2>
+    <app-spot3 [spotData]="spots[2]"></app-spot3>
   </div>
 </div>
