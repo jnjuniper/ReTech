@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @Component({
@@ -11,7 +12,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
   styleUrls: ['./admin.component.css'],
 })
 export class AdminComponent {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   product = {
     productName: '',
@@ -19,12 +20,15 @@ export class AdminComponent {
     image: '',
     brand: '',
     sku: '',
-    price: 0
+    price: 0,
   };
 
   onSubmit() {
-    this.http.post('http://localhost:8000/api/products', this.product).subscribe(() => {
-      alert('Produkten har lagts till!');
-    });
+    this.http
+      .post('http://localhost:8000/api/products', this.product)
+      .subscribe(() => {
+        alert('Produkten har lagts till!');
+        this.router.navigate(['/admin/products']);
+      });
   }
 }
