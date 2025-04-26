@@ -1,0 +1,90 @@
+<div class="footer-container">
+  <!-- Accordion för mobil (upp till 640px) -->
+  <div class="footer-accordion">
+    <div class="accordion-item">
+      <div
+        class="accordion-header"
+        [ngClass]="{ open: isOpen.shopping }"
+        (click)="toggleSection('shopping')"
+      >
+        <h3>Shopping</h3>
+        <span class="accordion-icon">{{ isOpen.shopping ? "−" : "+" }}</span>
+      </div>
+      <div class="accordion-content" [ngClass]="{ open: isOpen.shopping }">
+        <ul>
+          <li><a routerLink="/products">Laptops</a></li>
+          <li><a routerLink="/products">Smartphones</a></li>
+          <li><a routerLink="/products">Tablets</a></li>
+          <li><a routerLink="/products">Tillbehör</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div
+        class="accordion-header"
+        [ngClass]="{ open: isOpen.minaSidor }"
+        (click)="toggleSection('minaSidor')"
+      >
+        <h3>Mina Sidor</h3>
+        <span class="accordion-icon">{{ isOpen.minaSidor ? "−" : "+" }}</span>
+      </div>
+      <div class="accordion-content" [ngClass]="{ open: isOpen.minaSidor }">
+        <ul>
+          <li><a routerLink="/account/orders">Mina Ordrar</a></li>
+          <li><a routerLink="/account">Mitt Konto</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div
+        class="accordion-header"
+        [ngClass]="{ open: isOpen.kundtjanst }"
+        (click)="toggleSection('kundtjanst')"
+      >
+        <h3>Kundtjänst</h3>
+        <span class="accordion-icon">{{ isOpen.kundtjanst ? "−" : "+" }}</span>
+      </div>
+      <div class="accordion-content" [ngClass]="{ open: isOpen.kundtjanst }">
+        <ul>
+          <li><a routerLink="/return-policy">Returnpolicy</a></li>
+          <li><a routerLink="/privacy-policy">Integritetspolicy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vanlig footer för desktop (>640px) -->
+  <div class="footer-desktop">
+    <div class="footer-column">
+      <h3>Shopping</h3>
+      <ul>
+        <li><a routerLink="/products">Laptops</a></li>
+        <li><a routerLink="/products">Smartphones</a></li>
+        <li><a routerLink="/products">Tablets</a></li>
+        <li><a routerLink="/products">Tillbehör</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Mina Sidor</h3>
+      <ul>
+        <li><a routerLink="/account/orders">Mina Ordrar</a></li>
+        <li><a routerLink="/account">Mitt Konto</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Kundtjänst</h3>
+      <ul>
+        <li><a routerLink="/return-policy">Returnpolicy</a></li>
+        <li><a routerLink="/privacy-policy">Integritetspolicy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="copyright">
+    <p>© ReTech</p>
+  </div>
+</div>
