@@ -1,0 +1,124 @@
+/* Grundläggande stilar för footern */
+.footer-container {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f8f8f8;
+  border-top: 1px solid #e0e0e0;
+  padding: 20px;
+  margin-top: 30px; /* Mellanrum mellan komponenten ovanför och footern */
+}
+
+/* Styling för länkar */
+.footer-container a {
+  text-decoration: none;
+  color: #555;
+}
+
+.footer-container a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+.footer-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-container ul li {
+  margin-bottom: 8px;
+}
+
+.footer-container h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 700; /* Tjockare text för rubriker */
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Mobile accordion styles (up to 640px) */
+.footer-accordion {
+  display: block;
+}
+
+.footer-accordion .accordion-item {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.footer-accordion .accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Grön bakgrund för öppen accordion header */
+.footer-accordion .accordion-header.open {
+  background-color: #4caf50; /* Grön färg */
+  color: white;
+  padding: 15px 10px;
+  margin: 0 -10px;
+  margin-bottom: 15px; /* Ökat avstånd till innehållet under */
+  border-radius: 4px; /* Rundade hörn för snyggare utseende */
+}
+
+.footer-accordion .accordion-header h3 {
+  margin: 0;
+}
+
+.footer-accordion .accordion-header .accordion-icon {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.footer-accordion .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.footer-accordion .accordion-content.open {
+  max-height: 200px; /* Justera detta värde baserat på innehållet */
+  padding: 0 5px 15px 5px; /* Lite padding på sidorna också */
+}
+
+/* Regular desktop footer styles */
+.footer-desktop {
+  display: none;
+  justify-content: space-between;
+}
+
+.footer-desktop .footer-column {
+  flex: 1;
+  padding: 0 15px;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 640px) {
+  .footer-accordion {
+    display: block;
+  }
+
+  .footer-desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 641px) {
+  .footer-accordion {
+    display: none;
+  }
+
+  .footer-desktop {
+    display: flex;
+  }
+}
