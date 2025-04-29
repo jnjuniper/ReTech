@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductGridComponent } from '../product-grid/product-grid.component';
-
+import { Title } from '@angular/platform-browser';
 import { HeroComponent } from '../components/hero/hero.component';
 
 @Component({
@@ -15,6 +15,11 @@ import { HeroComponent } from '../components/hero/hero.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {
-  // Hemsideslogik här
+export class HomeComponent implements OnInit {
+  constructor (private titleService: Title) {}
+
+  ngOnInit(): void {
+    this.titleService.setTitle('Retech - Begagnad Teknik');
+  }
+
 }

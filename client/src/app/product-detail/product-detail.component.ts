@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Product } from '../models/product';
 import { ProductService } from '../services/product.service';
 import { ProductCardComponent } from '../product-card/product-card.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-product-detail',
@@ -23,7 +24,8 @@ export class ProductDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private productService: ProductService
+    private productService: ProductService,
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {
@@ -43,6 +45,7 @@ export class ProductDetailComponent implements OnInit {
       next: (data) => {
         this.product = data;
         this.loading = false;
+        this.titleService.setTitle(data.productName);
         this.loadSimilarProducts(data);
       },
       error: (error) => {
@@ -50,6 +53,7 @@ export class ProductDetailComponent implements OnInit {
           'Det gick inte att ladda produkten. Försök igen senare.';
         this.loading = false;
         console.error('Ett fel uppstod vid hämtning av produkt', error);
+        this.titleService.setTitle('Retech - Begagnad Teknik');
       },
     });
   }
