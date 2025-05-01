@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 import { Product } from '../models/product';
 import { ProductService } from '../services/product.service';
 import { ProductCardComponent } from '../product-card/product-card.component';
@@ -9,7 +8,7 @@ import { ProductCardComponent } from '../product-card/product-card.component';
 @Component({
   selector: 'app-product-grid',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, ProductCardComponent],
+  imports: [CommonModule, ProductCardComponent],
   templateUrl: './product-grid.component.html',
   styleUrl: './product-grid.component.css',
   providers: [ProductService],
