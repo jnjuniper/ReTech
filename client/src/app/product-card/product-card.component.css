@@ -25,16 +25,16 @@
   width: 100%;
 }
 
-/* Improved image container for all screen sizes */
+
 .product-image-container {
   position: relative;
   width: 100%;
-  padding-bottom: 100%; /* Creates a perfect square aspect ratio */
+  padding-bottom: 100%; 
   background-color: #ffffff;
   overflow: hidden;
 }
 
-/* Updated image styling to fill the container better */
+
 .product-image {
   position: absolute;
   top: 0;
@@ -42,7 +42,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 10px; /* Provide some breathing room */
+  padding: 10px; 
   transition: transform 0.3s ease;
 }
 
@@ -76,19 +76,19 @@
 }
 
 .heart-icon.active i {
-  font-weight: 900; /* Solid heart when active */
+  font-weight: 900;
   color: #e91e63;
 }
 
 .product-info {
-  padding: 20px; /* Ökad padding */
+  padding: 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
 .product-name {
-  font-size: 1.1rem; /* Större text */
+  font-size: 1.1rem; 
   font-weight: 500;
   margin: 0 0 10px 0;
   color: #333;
@@ -101,19 +101,19 @@
 }
 
 .product-brand {
-  font-size: 0.95rem; /* Större text */
+  font-size: 0.95rem;
   color: #666;
   margin: 0 0 8px 0;
 }
 
 .product-price {
-  font-size: 1.2rem; /* Större text */
+  font-size: 1.2rem; 
   font-weight: bold;
   color: #333;
   margin-top: auto;
 }
 
-/* Responsive adjustments for different screen sizes */
+
 @media (max-width: 767px) {
   .product-info {
     padding: 15px;

@@ -14,13 +14,12 @@ export class ProductCardComponent {
   @Input() product!: Product;
   isFavorite = false;
 
-  // Metod för att växla favoritstatus
   toggleFavorite(event: Event): void {
     event.preventDefault();
     event.stopPropagation();
     this.isFavorite = !this.isFavorite;
 
-    // Visuell bekräftelse med klassändring - inte aktuell för tillfället
+
     const target = event.target as HTMLElement;
     const button = target.closest('.heart-icon') as HTMLElement;
 

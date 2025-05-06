@@ -1,5 +1,4 @@
 <div class="product-card">
-  <!-- Ändrat från /product till bara product för att matcha din routing -->
   <a [routerLink]="['/products', product.slug]" class="product-link">
     <div class="product-image-container">
       <img
@@ -14,7 +13,7 @@
       <div class="product-price">{{ product.price }} SEK</div>
     </div>
   </a>
-  <!-- Hjärtikon för att lägga till favoriter -->
+
   <button class="heart-icon" (click)="toggleFavorite($event)">
     <i class="far fa-heart"></i>
   </button>
