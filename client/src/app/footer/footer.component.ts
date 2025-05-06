@@ -10,7 +10,6 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./footer.component.css'],
 })
 export class FooterComponent {
-  // Objekt för att hålla koll på accordion-sektionernas tillstånd
   isOpen = {
     shopping: false,
     minaSidor: false,
@@ -19,7 +18,6 @@ export class FooterComponent {
 
   constructor() {}
 
-  // Funktion för att öppna/stänga accordion-sektioner
   toggleSection(section: string): void {
     if (section in this.isOpen) {
       this.isOpen[section as keyof typeof this.isOpen] =

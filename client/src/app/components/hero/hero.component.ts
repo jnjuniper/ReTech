@@ -24,7 +24,7 @@ export class HeroComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.heroImageService.getHeroImages().subscribe({
       next: (data) => (this.heroImages = data),
-      error: () => (this.error = 'Failed to load hero images.'),
+      error: () => (this.error = 'Det gick inte att ladda bilderna. Försök igen senare.'),
     });
 
     this.setupInterval();

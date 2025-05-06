@@ -1,16 +1,13 @@
 <div class="product-detail-container">
-  <!-- Loading spinner -->
   <div *ngIf="loading" class="loading-spinner">
     <div class="spinner"></div>
     <p>Laddar produkt...</p>
   </div>
 
-  <!-- Error message -->
   <div *ngIf="errorMessage" class="error-message">
     {{ errorMessage }}
   </div>
 
-  <!-- Product detail -->
   <div *ngIf="product && !loading && !errorMessage" class="product-detail">
     <div class="product-image-container">
       <img
@@ -18,7 +15,7 @@
         [alt]="product.productName"
         class="product-image"
       />
-      <!-- Add heart icon for mobile screens only -->
+
       <button class="heart-icon-mobile" (click)="toggleFavorite($event)">
         <i class="far fa-heart"></i>
       </button>
@@ -40,7 +37,6 @@
     </div>
   </div>
 
-  <!-- Similar products section -->
   <div
     *ngIf="product && !loading && similarProducts.length > 0"
     class="similar-products-container"
